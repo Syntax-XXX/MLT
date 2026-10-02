@@ -1,8 +1,8 @@
-import { CopyLinkButton } from "@/components/CopyLinkButton";
-import { FeaturedScooter } from "@/components/FeaturedScooter";
-import { LinkButton } from "@/components/LinkButton";
-import { Profile } from "@/components/Profile";
-import { links } from "@/config/links";
+import { CopyLinkButton } from "../components/CopyLinkButton";
+import { FeaturedScooter } from "../components/FeaturedScooter";
+import { LinkButton } from "../components/LinkButton";
+import { Profile } from "../components/Profile";
+import { links } from "../config/links";
 
 export default function Home() {
   const activeLinks = links.filter((link) => link.enabled);
