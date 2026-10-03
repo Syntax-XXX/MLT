@@ -54,19 +54,29 @@ export function LinkButton({ link, index }: { link: SocialLink; index: number })
     if (link.id !== "tiktok") return;
 
     let active = true;
-    fetch("https://proxy.cors.dev/https://bm.syntax-xxx.is-a.dev/api/tiktok")
-      .then((response) => response.json())
-      .then((data) => {
+    const loadFollowers = async () => {
+      try {
+        const response = await fetch(
+          "https://proxy.cors.dev/https://bm.syntax-xxx.is-a.dev/api/tiktok",
+          { cache: "no-store" }
+        );
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
         if (!active) return;
-        const count = Number(data.followers ?? 0);
+        const count = Number(data.followers);
+        if (!Number.isFinite(count)) throw new Error("Invalid follower count");
         setFollowers(`${formatFollowers(count)} followers`);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("TikTok follower API failed:", error);
-      });
+      }
+    };
+
+    void loadFollowers();
+    const interval = window.setInterval(loadFollowers, 60_000);
 
     return () => {
       active = false;
+      window.clearInterval(interval);
     };
   }, [link.id]);
 
