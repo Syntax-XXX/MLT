@@ -54,15 +54,15 @@ export function LinkButton({ link, index }: { link: SocialLink; index: number })
     if (link.id !== "tiktok") return;
 
     let active = true;
-    fetch("/api/tiktok")
+    fetch("https://proxy.cors.dev/https://bm.syntax-xxx.is-a.dev/api/tiktok")
       .then((response) => response.json())
       .then((data) => {
         if (!active) return;
         const count = Number(data.followers ?? 0);
         setFollowers(`${formatFollowers(count)} followers`);
       })
-      .catch(() => {
-        if (active) setFollowers("1,000 followers");
+      .catch((error) => {
+        console.error("TikTok follower API failed:", error);
       });
 
     return () => {
