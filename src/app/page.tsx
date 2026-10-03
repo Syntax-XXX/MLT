@@ -40,9 +40,8 @@ export default function Home() {
               controls
               playsInline
               preload="metadata"
-              poster="/tutorial-code-poster.jpg"
             >
-              <source src="/tutorial-code.mp4" type="video/mp4" />
+              <source src="/1004_1.mp4" type="video/mp4" />
               Your browser does not support the video player.
             </video>
           </div>
