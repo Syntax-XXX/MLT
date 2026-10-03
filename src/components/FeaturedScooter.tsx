@@ -6,7 +6,7 @@ const scooterUrl = "https://www.kugooescooters.com/products/kukirin-g2-ultra-ele
 export function FeaturedScooter() {
   const specs = [
     { label: "Battery", value: "48V 18Ah" },
-    { label: "Range", value: "55KM" },
+    { label: "Price", value: "€669,00" },
     { label: "Range", value: "55KM" },
     { label: "Motor", value: "1600W" },
   ];
