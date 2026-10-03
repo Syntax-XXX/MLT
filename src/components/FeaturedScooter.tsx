@@ -7,7 +7,7 @@ export function FeaturedScooter() {
   const specs = [
     { label: "Battery", value: "48V 18Ah" },
     { label: "Speed", value: "50km/h" },
-    { label: "Range", value: "60km" },
+    { label: "Price", value: "€669,00" },
     { label: "Motor", value: "1600W" },
   ];
 
