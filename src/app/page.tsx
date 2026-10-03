@@ -25,6 +25,27 @@ export default function Home() {
       <section className="content" aria-label="BeastMode links">
         <Profile />
         <FeaturedScooter />
+        <section className="tutorial-card reveal reveal-delay-1" aria-labelledby="tutorial-title">
+          <div className="tutorial-heading">
+            <div>
+              <span className="tutorial-eyebrow">QUICK TUTORIAL</span>
+              <h2 id="tutorial-title">How to use the code</h2>
+              <p>Watch the short guide to see exactly how to use the BeastMode code.</p>
+            </div>
+            <span className="tutorial-badge">VIDEO GUIDE</span>
+          </div>
+          <div className="tutorial-video-wrap">
+            <video
+              className="tutorial-video"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/1004_1.mp4" type="video/mp4" />
+              Your browser does not support the video player.
+            </video>
+          </div>
+        </section>
         <nav className="link-list" aria-label="BeastMode destinations">
           {activeLinks.map((link, index) => <LinkButton key={link.id} link={link} index={index} />)}
         </nav>
